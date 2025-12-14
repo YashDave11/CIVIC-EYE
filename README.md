@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Civic Eye - Autonomous Intelligent Surveillance System
 
-## Getting Started
+**Civic Eye** is a next-generation surveillance platform designed for the **Government of Rajasthan**. It shifts the paradigm from reactive monitoring to **preventive AI-driven action**, utilizing edge computing to detect anomalies like fire, accidents, and violence in real-time.
 
-First, run the development server:
+## 🚀 Key Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+*   **Real-Time Dashboard**: A high-performance, low-latency grid view monitoring multiple camera feeds simultaneously.
+*   **Edge AI Detection**:
+    *   **Fire Detection**: Uses TFLite models to instantly spot fire hazards.
+    *   **Anomaly Detection**: Uses YOLOv8 to identify vehicle accidents and potential violence.
+*   **Role-Based Alerting**:
+    *   **Civil Dashboard**: Standard view for general surveillance.
+    *   **Fire Department Portal**: Dedicated high-priority dashboard for fire alerts with auto-dispatch capabilities.
+*   **Simulation Mode**: Built-in capabilities to simulate detection scenarios (e.g., Fire Video) for demonstrations.
+*   **Privacy & Security**: 'Edge-first' processing ensures data privacy by analyzing video locally before transmission.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Frontend (User Interface)
+*   **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
+*   **Language**: TypeScript
+*   **Styling**: Tailwind CSS v4 (Custom Navy/Government Theme)
+*   **Icons**: Lucide React
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Backend & AI
+*   **Core**: Python 3.10+
+*   **API**: FastAPI (Microservice Architecture)
+*   **Communication**: WebSockets (Real-time data streaming)
+*   **Computer Vision**: OpenCV
 
-## Learn More
+### AI Models
+*   **Object Detection**: YOLOv8 (Ultralytics)
+*   **Edge Optimization**: TensorFlow Lite (Fire Detection)
 
-To learn more about Next.js, take a look at the following resources:
+## 📦 Getting Started
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Prerequisites
+*   Node.js 18+
+*   Python 3.10+
+*   Webcam or IP Camera source
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Installation
 
-## Deploy on Vercel
+1.  **Clone the Repository**
+    ```bash
+    git clone https://github.com/YashDave11/CIVIC-EYE.git
+    cd CIVIC-EYE/civic-eye-web
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2.  **Install Frontend Dependencies**
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3.  **Run Development Server**
+    ```bash
+    npm run dev
+    ```
+    Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+4.  **Run AI Microservice (Optional)**
+    Navigate to the `civic-eye-ai` folder (if available) and run:
+    ```bash
+    pip install -r requirements.txt
+    python main.py
+    ```
+
+## 🎥 Usage
+
+1.  **Dashboard**: Navigate to `/dashboard` to view live feeds.
+2.  **Add Camera**: Use the "Register Camera" feature to add new IP streams.
+3.  **Fire Demo**: Play the "Cam-03" stream to see the **Fire Department Alert** system in action.
+    *   *Note: Alerts trigger automatically > 0:50s mark.*
+4.  **Fire Dept**: Access the dedicated portal at `/fire-department` to view incoming incident reports.
+
+---
+*Developed for the Rajasthan Hackathon 2025.*
