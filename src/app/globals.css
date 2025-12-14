@@ -1,26 +1,27 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Navy Palette */
+  --color-navy-50: #f0f4fe;
+  --color-navy-100: #dde6fc;
+  --color-navy-200: #c2d4fa;
+  --color-navy-300: #99baf6;
+  --color-navy-400: #699af0;
+  --color-navy-500: #437be8;
+  --color-navy-600: #2b5fd7;
+  --color-navy-700: #234cb3;
+  --color-navy-800: #224091; 
+  --color-navy-900: #1e3673;
+
+  --color-gov-blue: #0369A1;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* 
+   Safely remove default Next.js theme variables 
+   that forced dark mode blacks/whites.
+*/
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Ensure background matches our design (slate-50 or white) */
+  /* Using @apply is also possible but keeping it simple */
 }
